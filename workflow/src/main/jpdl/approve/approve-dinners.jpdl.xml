@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2"  name="Proceso de aprobación">
+	<swimlane name="initiator"></swimlane>
+	
+	<start-state name="start">
+		<transition to="task-secretary" name="to-1"></transition>
+	</start-state>
+
+	<task-node name="task-secretary">
+		<task name="task-secretary">
+			<assignment actor-id="okmAdmin"></assignment>
+		</task>
+		<transition to="node-secretary" name="to-node-secretary"></transition>
+		<transition to="end" name="to-end"></transition>
+		<transition to="task-final-approve" name="to-task-final-approve"></transition>		
+	</task-node>
+
+	<node name="node-secretary">
+		<action name="node-secretary" class="com.openkm.dinners.workflow.action.SecretaryAction"></action>
+		<transition to="task-deparment" name="to-task-deparment"></transition>
+	</node>
+
+	<task-node name="task-deparment">
+		<task name="task-deparment">
+			<assignment actor-id="okmAdmin"></assignment>
+		</task>
+		<transition to="node-deparment" name="to-node-deparment"></transition>
+		<transition to="task-prorogation" name="to task-prorogation"></transition>
+	</task-node>
+
+	<node name="node-deparment">
+		<action name="node-deparment" class="com.openkm.dinners.workflow.action.DeparmentAction"></action>
+		<transition to="task-secretary" name="to-task-secretary"></transition>
+	</node>
+
+	<task-node name="task-final-approve">
+		<task name="task-final-approve">
+			<assignment actor-id="okmAdmin"></assignment>
+		</task>
+		<transition to="end" name="to-end-from-final"></transition>
+	</task-node>
+
+	<task-node name="task-prorogation">
+		<transition to="node-prorogation" name="to node-prorogation"></transition>
+	</task-node>
+
+	<node name="node-prorogation">
+		<transition to="node-deparment" name="to-node-department"></transition>
+	</node>
+
+	<end-state name="end"></end-state>
+</process-definition>

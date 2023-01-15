@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow-forms PUBLIC "-//OpenKM//DTD Workflow Forms 2.13//EN"
+    "http://www.openkm.com/dtd/workflow-forms-2.13.dtd">
+<workflow-forms>
+  <workflow-form task="task-secretary">
+  
+  <text name="text-description-secretary" label="Tarea asignada a Secretaria Diners Club"/>
+  <input label="NroConsecutivo" name = "NroConsecutivo" />
+    <input label="Fecha Recepciòn" name="date_reception" type="date" />
+    <select label="Origen del Documento: " name="select_origen" data="origenData">
+      <option label="SBC" value="1"/>
+      <option label="SUPER CIAS" value="2"/>
+      <option label="OTROS" value="3"/>
+      <validator type="req"/>
+    </select>
+    <checkbox name="fisico" label="Recibido Fisicamente ?" />
+    <input label="Nro de Caja Fisica" name="NroCajaFisica" />
+    <checkbox name="digital" label="Recibido Digitalmente ?" />
+    <input label="Nro de Circular" name="NroCircular" />
+    <input label="Nro de Of. Referido en SB" name="NroOfReferido" />
+    <input label="Fecha Emisiòn" name="date_emision" type="date" />
+   <textarea label="Descripcion" name="textarea_comments_secretary" data="commentsData">
+      <validator type="maxlen" parameter="4096"/>
+      <validator type="req"/>
+    </textarea>
+    <checkbox name="contesta_secretaria" label="Responde Secretaria general?" />
+    <select label="Dirigido a: " name="select_entidad" data="entidadData">
+      <option label="VISA" value="1"/>
+      <option label="DINERS" value="2"/>
+      <option label="MASTERCARD" value="3"/>
+      <validator type="req"/>
+    </select>
+    <select label="Area que responde: " name="select_area" data="areaData">
+      <option label="ADMINISTRACION DE DOCUMENTOS" value="1"/>
+      <option label="ADMINISTRATIVO" value="2"/>
+      <option label="ANALISIS DE CARTERA" value="3"/>
+      <option label="AUDITORIA" value="4"/>
+      <option label="AUTOMOTRIZ" value="5"/>
+      <option label="CENTRO DE SERVICIOS" value="6"/>
+      <option label="COBRANZAS" value="7"/>
+      <option label="COMERCIAL EMPRESA SIERRA" value="8"/>
+      <option label="CONTABILIDAD E IMPUSTOS" value="9"/>
+      <option label="CONTRALORIA GENERAL" value="10"/>
+      <option label="CORPORATIVO" value="11"/>
+      <option label="CUMPLIMIENTO" value="12"/>
+      <option label="ESTABLECIMIENTOS" value="13"/>
+      <option label="GESTION BAJO Y MEDIANO RIESGO" value="14"/>
+      <option label="GESTION DE LA INFORMACION" value="15"/>
+      <option label="LEGAL" value="16"/>
+      <option label="LEGAL" value="17"/>
+      <option label="NEGOCIOS" value="18"/>
+      <option label="OFICINA AMBATO" value="19"/>
+      <option label="OFICINA IBARRA" value="20"/>
+      <option label="OPERACIONES FINANCIERAS" value="21"/>
+      <option label="PLANEACION FINANCIERA Y PRESUPUESTOS" value="22"/>
+      <option label="PLANEACION Y FINANZAS" value="23"/>
+      <option label="PRESIDENCIA" value="24"/>
+      <option label="RECURSOS HUMANOS" value="25"/>
+      <option label="RESPONSABILIDAD SOCIAL" value="26"/>
+      <option label="RIESGO CIVIL" value="27"/>
+      <option label="RIESGO OPERATIVO" value="28"/>
+      <option label="RIESGOS" value="29"/>
+      <option label="SECRETARIA GENERAL" value="30"/>
+      <option label="STAFF" value="31"/>
+      <option label="SUCURSAL CUENCA" value="32"/>
+      <option label="SUCURSAL GUAYAQUIL" value="33"/>
+      <option label="SUCURSAL MACHALA" value="34"/>
+      <option label="TESORERIA" value="35"/>
+      <validator type="req"/>
+    </select>
+    
+    <select label="Destinatario Responsable: " name="select_user" data="userData">
+      <option label="SAAVEDRA JIMENEZ TATIANA MARIBEL" value="1"/>
+      <option label="MOREIRA FERAUD MARIA LORENA" value="2"/>
+      <option label="ORDOÑEZ CORNEJO SILVIA DEL PILAR" value="3"/>
+      <validator type="req"/>
+    </select>
+    <input label="Fecha Traslado" name="date_traslado" type="date" />
+    <input label="Fecha Limite" name="date_limite" type="date" />
+    <select label="Lugar Destinatario: " name="select_lugar" data="siteData">
+      <option label="PICHINCHA" value="1"/>
+      <option label="GUAYAS" value="2"/>
+      <option label="AZUAY" value="3"/>
+      <validator type="req"/>
+    </select>
+    <input label="Fecha Vencimiento" name="date_vencimientoOf" type="date" />
+  	
+  	<button name="deny" label="Enviar a Gestiòn Expediente" style="yes"  color="info" transition="to-node-secretary" />  	
+  	<button name="approve" label="Aprobacion Expediente" color="success" style="yes" transition="to-task-final-approve" />  	
+  	<button name="deny" label="Rechazar Expediente" style="no" color="danger" transition="to-end" />  	
+  	
+  	
+  </workflow-form>
+  
+  
+  <workflow-form task="task-deparment"> 
+  	<text name="text-description-deparment" label="Tarea asignada a Departamento"/> 
+    <input label="NroConsecutivo" name = "NroConsecutivo" />
+  	<input label="Fecha Contestacion" name="date_contestacion" type="date" />
+  	<textarea label="Comentarios" name="textarea_comments_deparment" data="commentsData">
+      <validator type="maxlen" parameter="4096"/>
+      <validator type="req"/>
+  	</textarea>
+  	<input label="Usuario que Responde" name = "userResponse" />
+    	
+  	<button name="ok" label="Enviar a Secretaria" style="yes" color="success"  transition="to-node-deparment" />  	
+  	<button name="info" label="Mas informacion" style="no" color="info"  transition="to-node-deparment" />  	
+  	<button name="time" label="Solicitar más tiempo" style="no" color="warning"  transition="to-task-prorogation" />
+  	<button name="up" label="Agregar Respaldos" style="no" color="info"  transition="to-node-deparment" />
+  </workflow-form>
+  
+  
+  <workflow-form task="task-final-approve">  
+  
+  	<text name="text-description-secretary-final" label="Tarea Final asignada a Secretaria"/>
+   	<input label="Fecha Envio de Respuesta" name="date_response" type="date" />
+    <select label="Estado del Caso " name="select_case" data="caseData">
+      <option label="ABIERTO" value="1"/>
+      <option label="CERRADO" value="2"/>
+      <option label="CONTESTADO" value="3"/>
+      <validator type="req"/>
+    </select>
+    <input label="Nro de Juicio" name = "NroJuicio" />
+    <textarea label="Observaciones" name="textarea_comments_final" data="commentsData">
+     <validator type="maxlen" parameter="4096"/>
+     <validator type="req"/>
+    </textarea>
+    <select label="Revision de Secretaria " name="select_revision" data="revisionData">
+      <option label="ABIERTO" value="1"/>
+      <option label="CONTESTADO EN PLAZO" value="2"/>
+      <option label="CERRADO FUERA DE PLAZO" value="3"/>
+      <option label="APLAZADO" value="4"/>
+      <validator type="req"/>
+    </select>
+    <input label="Fecha Acuse de Recibo" name="date_acuse" type="date" />
+    	
+  	<button name="approve_final" label="Aprobacion Final del Expediente" color="success" style="yes" transition="to-end-from-final" />  	
+  	<button name="deny_final" label="Rechazar Expediente" style="no" color="danger" transition="to-end-from-final" />
+  	<button name="upload_final" label="Subir Respaldos" style="no" color="info" transition="to-end-from-final" />	  	
+  </workflow-form>
+  
+  <workflow-form task="task-prorogation">
+  	
+  </workflow-form>
+</workflow-forms>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-groups PUBLIC "-//OpenKM//DTD Property Groups 3.9//EN"
+    "http://www.openkm.com/dtd/property-groups-3.9.dtd">
+<property-groups>
+  <property-group label="Dinners Club" name="okg:dinners">
+    <input label="Cédula" name="okp:dinners.cedula"/>
+    <select label="Tipo de documento" name="okp:dinners.tipodoc" type="simple">
+      <option label="Registro" value="RE"/>
+      <option label="Notificación" value="NO"/>
+    </select>
+    <checkbox label="Crear expediente" name="okp:dinners.crear"/>
+  </property-group>
+</property-groups>
