@@ -105,7 +105,7 @@
     	
   	<button name="ok" label="Enviar a Secretaria" style="yes" color="success"  transition="to-node-deparment" />  	
   	<button name="info" label="Mas informacion" style="no" color="info"  transition="to-node-deparment" />  	
-  	<button name="time" label="Solicitar más tiempo" style="no" color="warning"  transition="to-task-prorogation" />
+  	<button name="time" label="Solicitar Pròrroga" style="no" color="warning"  transition="to-task-prorogation" />
   	<button name="up" label="Agregar Respaldos" style="no" color="info"  transition="to-node-deparment" />
   </workflow-form>
   
@@ -140,6 +140,16 @@
   </workflow-form>
   
   <workflow-form task="task-prorogation">
-  	
+  	<text name="text-description-prorogation" label="Generar Solicitud de Pròroga"/>
+   	<input label="Fecha Solicitud de Prorroga" name="date_prorogation" type="date" />
+    <input label="Ingreso de Pròrroga (en dìas):" name = "daysNumber" />
+    <textarea label="Observaciones" name="textarea_comments_final" data="commentsData">
+     <validator type="maxlen" parameter="4096"/>
+     <validator type="req"/>
+    </textarea>
+    
+    <button name="request_prorogation" label="Solicitar Pròrroga" color="success" style="yes" transition="to-node-prorogation" />  	
+  	<button name="deny_final" label="Rechazar Expediente" style="no" color="danger" transition="to-end-from-final" />
+  	<button name="return_deparment" label="Anular Pròrroga" style="no" color="info" transition="to-node-deparment" />	  	
   </workflow-form>
 </workflow-forms>

@@ -41,10 +41,11 @@
 	</task-node>
 
 	<task-node name="task-prorogation">
-		<transition to="node-prorogation" name="to node-prorogation"></transition>
+		<transition to="node-prorogation" name="to-node-prorogation"></transition>
 	</task-node>
 
 	<node name="node-prorogation">
+		<action class="com.openkm.dinners.workflow.prorogation.RequestProrogation"></action>
 		<transition to="node-deparment" name="to-node-department"></transition>
 	</node>
 
