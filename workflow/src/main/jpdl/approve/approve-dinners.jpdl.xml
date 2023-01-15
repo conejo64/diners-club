@@ -46,7 +46,7 @@
 
 	<node name="node-prorogation">
 		<action class="com.openkm.dinners.workflow.prorogation.RequestProrogation"></action>
-		<transition to="node-deparment" name="to-node-department"></transition>
+		<transition to="task-deparment" name="to-task-deparment"></transition>
 	</node>
 
 	<end-state name="end"></end-state>

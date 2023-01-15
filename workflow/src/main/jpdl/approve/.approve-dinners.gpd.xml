@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<root-container name="Proceso de aprobación" width="994" height="387">
+<root-container name="Proceso de aprobación" width="994" height="385">
   <node name="start" x="225" y="57" width="140" height="40">
     <edge>
       <label x="5" y="-10"/>
@@ -40,7 +40,6 @@
       <label x="-133" y="-20"/>
     </edge>
   </node>
-  <node name="end" x="224" y="340" width="140" height="40"/>
   <node name="task-prorogation" x="744" y="348" width="132" height="36">
     <edge>
       <label x="-46" y="-21"/>
@@ -51,6 +50,7 @@
       <label x="5" y="-10"/>
     </edge>
   </node>
+  <node name="end" x="224" y="340" width="140" height="40"/>
   <deployment graphicalInfoFile="/diners-club/workflow/src/main/jpdl/approve/.approve-dinners.gpd.xml" imageFile="/diners-club/workflow/src/main/jpdl/approve/approve-dinners.jpg" serverName="localhost" serverPort="8180" serverDeployer="/jbpm-console/admin/workflow-register">
     <additionalFiles>
       <element value="/diners-club/workflow/src/main/jpdl/approve/forms.xml"/>
