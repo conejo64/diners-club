@@ -87,7 +87,7 @@
   	
   	<button name="deny" label="Enviar a Gestiòn Expediente" style="yes"  color="info" transition="to-node-secretary" />  	
   	<button name="approve" label="Aprobacion Expediente" color="success" style="yes" transition="to-task-final-approve" />
-	<button name="time" label="Solicitar Pròrroga" style="no" color="warning"  transition="to-task-prorogation" /> 	
+	<button name="time" label="Solicitar Pròrroga" style="yes" color="warning"  transition="to-task-prorogation" /> 	
   	<button name="deny" label="Rechazar Expediente" style="no" color="danger" transition="to-end" />  	
   	
   	

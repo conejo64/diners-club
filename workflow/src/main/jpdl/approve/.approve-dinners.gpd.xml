@@ -51,9 +51,9 @@
     </edge>
   </node>
   <node name="end" x="224" y="340" width="140" height="40"/>
-  <deployment graphicalInfoFile="/diners-club/workflow/src/main/jpdl/approve/.approve-dinners.gpd.xml" imageFile="/diners-club/workflow/src/main/jpdl/approve/approve-dinners.jpg" serverName="localhost" serverPort="8180" serverDeployer="/jbpm-console/admin/workflow-register">
+  <deployment graphicalInfoFile="/diners-club-dev/workflow/src/main/jpdl/approve/.approve-dinners.gpd.xml" imageFile="/diners-club-dev/workflow/src/main/jpdl/approve/approve-dinners.jpg" serverName="localhost" serverPort="8080" serverDeployer="/jbpm-console/admin/workflow-register">
     <additionalFiles>
-      <element value="/diners-club/workflow/src/main/jpdl/approve/forms.xml"/>
+      <element value="/diners-club-dev/workflow/src/main/jpdl/approve/forms.xml"/>
     </additionalFiles>
   </deployment>
 </root-container>
