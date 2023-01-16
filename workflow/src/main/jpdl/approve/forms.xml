@@ -3,7 +3,6 @@
     "http://www.openkm.com/dtd/workflow-forms-2.13.dtd">
 <workflow-forms>
   <workflow-form task="task-secretary">
-  
   <text name="text-description-secretary" label="Tarea asignada a Secretaria Diners Club"/>
   <input label="NroConsecutivo" name = "NroConsecutivo" />
     <input label="Fecha Recepciòn" name="date_reception" type="date" />
@@ -85,7 +84,7 @@
     </select>
     <input label="Fecha Vencimiento" name="date_vencimientoOf" type="date" />
   	
-  	<button name="deny" label="Enviar a Gestiòn Expediente" style="yes"  color="info" transition="to-node-secretary" />  	
+  	<button name="deparment" label="Enviar a Gestiòn Expediente" style="yes"  color="info" transition="to-node-secretary" />  	
   	<button name="approve" label="Aprobacion Expediente" color="success" style="yes" transition="to-task-final-approve" />
 	<button name="time" label="Solicitar Pròrroga" style="yes" color="warning"  transition="to-task-prorogation" /> 	
   	<button name="deny" label="Rechazar Expediente" style="no" color="danger" transition="to-end" />  	
@@ -152,5 +151,13 @@
     <button name="request_prorogation" label="Solicitar Pròrroga" color="success" style="yes" transition="to-node-prorogation" />  	
   	<button name="deny_final" label="Rechazar Expediente" style="no" color="danger" transition="to-end-from-final" />
   	<button name="return_deparment" label="Anular Pròrroga" style="no" color="info" transition="to-node-deparment" />	  	
+  </workflow-form>
+  
+  <workflow-form task="task-search-response">
+  	
+  </workflow-form>
+  
+  <workflow-form task="task-search-case">
+  
   </workflow-form>
 </workflow-forms>

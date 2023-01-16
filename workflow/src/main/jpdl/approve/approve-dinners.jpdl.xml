@@ -12,12 +12,14 @@
 		</task>
 		<transition to="node-secretary" name="to-node-secretary"></transition>
 		<transition to="end" name="to-end"></transition>
-		<transition to="task-final-approve" name="to-task-final-approve"></transition>		
+		<transition to="task-final-approve" name="to-task-final-approve"></transition>
+		<transition to="task-prorogation" name="to-task-prorogation"></transition>		
 	</task-node>
 
 	<node name="node-secretary">
 		<action name="node-secretary" class="com.openkm.dinners.workflow.action.SecretaryAction"></action>
 		<transition to="task-deparment" name="to-task-deparment"></transition>
+		<transition to="task-prorogation" name="to-task-prorogation"></transition>
 	</node>
 
 	<task-node name="task-deparment">
@@ -25,7 +27,7 @@
 			<assignment actor-id="okmAdmin"></assignment>
 		</task>
 		<transition to="node-deparment" name="to-node-deparment"></transition>
-		<transition to="task-prorogation" name="to task-prorogation"></transition>
+		<transition to="task-prorogation" name="to-task-prorogation"></transition>
 	</task-node>
 
 	<node name="node-deparment">
